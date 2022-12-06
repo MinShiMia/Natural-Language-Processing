@@ -1,28 +1,20 @@
 This folder includes the codes for web scraping Wall Street Journal (WSJ) article archieve website (https://www.wsj.com/news/archive/years).
 
-The original code is based on the code shared by Philippe Heitzmann on his GitHub (https://github.com/philippe-heitzmann/WSJ_WebScraping_NLP/blob/master/scraping/scrape.py). 
-However, the code didn't work due to the changes in HTML format. Also, the program didn't run stably due to not considering the situations 
-that the program could be blocked out and paused. 
+The original code is based on the code shared by Philippe Heitzmann on his GitHub (https://github.com/philippe-heitzmann/WSJ_WebScraping_NLP/blob/master/scraping/scrape.py). However, the code didn't work due to the changes in HTML format. Also, the program didn't run stably due to not considering the situations that the program could be blocked out and paused. 
 
-After several days' debugging process with the help of Yu Zhang, who is majoring in computer science at Iowa State University, the original one-file code
-is divided into four files based on different modules:
-1.	Timeout.py is created to handle the situation that the program might die and be paused at some time.
+After several days' debugging process with the help of Yu Zhang, who is majoring in computer science at Iowa State University, the original one-file code is divided into four files based on different modules:
 
-2.	Customized_logging.py is generated to store the downloading log whenever issues are detected during the scraping process.
+1. Timeout.py is created to handle the situation that the program might die and be paused at some time.
 
-3.	The web_crawler.py is the core of the whole program – scraping WSJ articles based on ten functions built on selenium, webdriver_manager, 
+2. Customized_logging.py is generated to store the downloading log whenever issues are detected during the scraping process.
+
+3. The web_crawler.py is the core of the whole program – scraping WSJ articles based on ten functions built on selenium, webdriver_manager, 
 two python packages, and two self-generated classes from the files above.
 
-4.	Main.py is utilized to call the web_crawler class, provide input values for the year and month we want to scrape, and start the program.
+4. Main.py is utilized to call the web_crawler class, provide input values for the year and month we want to scrape, and start the program.
 
 There are some limitations for this web scraping programs:
 
-1) The downloading process is a little time-consuming. For example, there is 50 articles published daily by WSJ, and the average number of articles published in a month 
-is 1500. Using this programming, it appropximately take 2-3 hours to downloading one month's article. 
-The long time-consuming is due to the use of time.sleep() function to mimic the speed of people manually searching and downloading the headline, published date, 
-content, etc. for each news article. Otherwise, the program might be detected and blocked out by WSJ website. 
-This limitation could be solved by adding parallel commands to allow multiprocessing in the near future.
+1) The downloading process is a little time-consuming. For example, there is 50 articles published daily by WSJ, and the average number of articles published in a month is 1500. Using this programming, it appropximately take 2-3 hours to downloading one month's article. The long time-consuming is due to the use of time.sleep() function to mimic the speed of people manually searching and downloading the headline, published date, content, etc. for each news article. Otherwise, the program might be detected and blocked out by WSJ website. This limitation could be solved by adding parallel commands to allow multiprocessing in the near future.
 
-2) Also, the web scraping program cannot detect the right content and returns null values for some articles. Thus, after getting the daily files downloaded, you
-could use the dropna function to clean the empty records, and then use filter function to filter out the articles you want to use for your sample. 
-(Sample code is provided in the file under Data Filter folder under this directory.
+2) Also, the web scraping program cannot detect the right content and returns null values for some articles. Thus, after getting the daily files downloaded, you could use the dropna function to clean the empty records, and then use filter function to filter out the articles you want to use for your sample. (Sample code is provided in the file under Data Filter folder under this directory.
