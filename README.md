@@ -22,7 +22,7 @@ Python is used to scrape newspaper articles from the Wall Street Journal website
 Python is the main platform for this project. Some Python packages, including numpy, pandas, matplotlib, seaborn, sys, cvs, string, statsmodels, scipy, nltk, sklearn, spicy, genism, pickle, vaderSentiment, and textblob, etc. are used to preprocess raw text data, including tokenization, removing stop and punctuation words, stemming and lemmatization, etc. and to do topic modeling, sentiment analysis, time-series analysis and machine learning model building.
 
 # Data Analysis 
-Please refer to [HTML File](https://MinShiMia.github.com/Natural-Language-Processing/BUAN_6342_NLP_Project_Min_Shi.html) for more details.
+Please refer to [HTML File](https://minshimia.github.io/Natural-Language-Processing/BUAN_6342_NLP_Project_Min_Shi.html) for more details.
 
 # Conclusion
 Naïve Bayes model is the best model according to ROC AUC value and Random Forest model has the best performance according to testing score. Besides, there is no big difference on the model accuracy utilizing different vectorizers to generate the matrix of token counts.
